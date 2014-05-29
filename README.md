@@ -17,13 +17,9 @@ Very simple usage:
     require_once("SolrClient.php");
       
     $client = new SolrClient("localhost", "8983");
-  
     $client->setUriPath("/solr/collection1/");
-  
     $client->addParameter("q", "*:*");
-  
     $client->addParameter("start", 0);
-  
     $client->addParameter("rows", 10);
   
     $facets = new SolrFacetHandler();
