@@ -23,21 +23,15 @@ Very simple usage:
     $client->addParameter("rows", 10);
   
     $facets = new SolrFacetHandler();
-  
     $facets->addFacetField("category");
   
     $client->setFacets($facets);
-  
     $client->doQuery();
   
     echo $client->getNumberOfResults();
-    
     $docs = $client->getResults();
-  
     foreach ($docs as $doc) {
-  
-    print_r($doc);
-    
+        print_r($doc);
     }
   
   
