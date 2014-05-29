@@ -13,7 +13,8 @@ It is completely object oriented and lets the user fine graining the searches by
 
 Very simple usage:
 ------------------
-query
+Query
+
     require_once("SolrClient.php");
       
     $client = new SolrClient("localhost", "8983");
@@ -26,7 +27,11 @@ query
     $facets->addFacetField("category");
   
     $client->setFacets($facets);
-    $client->doQuery();
+    try {
+        $client->doQuery();
+    } catch (Exception $e) {
+        echo "Caught Exception: " . $e->getMessage();
+    }
   
     echo $client->getNumberOfResults();
     $docs = $client->getResults();
