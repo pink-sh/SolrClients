@@ -14,35 +14,35 @@ It is completely object oriented and lets the user fine graining the searches by
 Very simple usage:
 ------------------
 
-  require_once("SolrClient.php");
+    require_once("SolrClient.php");
+      
+    $client = new SolrClient("localhost", "8983");
   
-  $client = new SolrClient("localhost", "8983");
+    $client->setUriPath("/solr/collection1/");
   
-  $client->setUriPath("/solr/collection1/");
+    $client->addParameter("q", "*:*");
   
-  $client->addParameter("q", "*:*");
+    $client->addParameter("start", 0);
   
-  $client->addParameter("start", 0);
+    $client->addParameter("rows", 10);
   
-  $client->addParameter("rows", 10);
+    $facets = new SolrFacetHandler();
   
-  $facets = new SolrFacetHandler();
+    $facets->addFacetField("category");
   
-  $facets->addFacetField("category");
+    $client->setFacets($facets);
   
-  $client->setFacets($facets);
+    $client->doQuery();
   
-  $client->doQuery();
+    echo $client->getNumberOfResults();
+    
+    $docs = $client->getResults();
   
-  echo $client->getNumberOfResults();
-  
-  $docs = $client->getResults();
-  
-  foreach ($docs as $doc) {
+    foreach ($docs as $doc) {
   
     print_r($doc);
     
-  }
+    }
   
   
 
