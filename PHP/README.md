@@ -7,8 +7,9 @@ Class Methods:
   SolrClient:
   -----------
   Constructor:
-    new SolrClient($host, $port)
   
+    new SolrClient($host, $port)
+---------------------------------------------------------------------------------
     setUriPath($uri);
       Path where Solr is located (ex. /solr/)
       Default: none
@@ -89,9 +90,9 @@ Class Methods:
           );
           
       
-      getResults();
-        gets the list of results
+    getResults();
+      gets the list of results
         
-      getNumberOfResults();
-        gets the number of results found
+    getNumberOfResults();
+      gets the number of results found
       
