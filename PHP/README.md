@@ -13,17 +13,38 @@ Class Methods:
       Path where Solr is located (ex. /solr/)
       Default: none
     
-    setRequestHandler($handler)
+    setRequestHandler($handler);
       Solr Request Handler
       Default: select
     
-    setUpdateHandler($handler)
+    setUpdateHandler($handler);
       Solr Update Handler
       Default: update
     
-    setOutputType($type)
+    setOutputType($type);
       Set the Query output types {json, xml, csv, python, ruby, php}
       Default: json
     
-  addParameter($param, $value)
-    
+    setQueryParser($qp);
+      Set the query parser {dismax, edismax}
+      Default: none
+      
+    setRows($rows);
+      Set the returning documents rows
+      Default: 10
+      
+    setStart($start);
+      Set the query start
+      Default: 0
+      
+    addParameter($param, $value);
+      Add a query parameter
+      ex:
+        addParameter("q", "title:test");
+        addParameter("q", "title:test");
+        addParameter("fq", "features:Documentary");
+        addParameter("fl", "category keywords");
+        addParameter("sort", "category desc, keywords asc");
+        
+        
+      
