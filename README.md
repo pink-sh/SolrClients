@@ -13,7 +13,7 @@ It is completely object oriented and lets the user fine graining the searches by
 
 Very simple usage:
 ------------------
-
+query
     require_once("SolrClient.php");
       
     $client = new SolrClient("localhost", "8983");
