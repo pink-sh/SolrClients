@@ -39,6 +39,33 @@ Query
         print_r($doc);
     }
   
+  Update
+  
+    require_once("SolrClient.php");
+      
+    $client = new SolrClient("localhost", "8983");
+    $client->setUriPath("/solr/collection1/");
+    
+    $dataToUpdate = array(
+	    array(
+		    "id" => "1",
+    	    "name" => "John",
+    	    "surname" => "Smith",
+        ),
+	    array(
+		    "id" => "2",
+    	    "name" => "Mary",
+    	    "surname" => "White",
+	    )
+    );
+    
+    try {
+        $client->doUpdate($dataToUpdate);
+    } catch (Exception $e) {
+        echo "Caught Exception: " . $e->getMessage();
+    }
+    
+    
   
 
 
