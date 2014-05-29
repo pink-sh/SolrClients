@@ -46,5 +46,52 @@ Class Methods:
         addParameter("fl", "category keywords");
         addParameter("sort", "category desc, keywords asc");
         
+    addCustomParameter($param, $value)
+      Add a custom parameter, mainly used for compatibility with different Solr versions
+      
+    getRawResponse();
+      returns the Raw Solr server response
+      
+    getSolrCallsLog();
+      returns a list of all the calls made to solr so far
+      
+    setHighlight(true|false);
+      Set the highlight
+      
+    setSpatial(true|false);
+      Set the spatial
+      
+    setSpellCheck(true|false);
+      Set the spellcheck
+      
+    setFacets(object SolrFacetsHandler);
+      Set the query facets
+      
+    doQuery();
+      Performs the query to Solr
+      
+    doUpdate($data);
+      Performs the update.
+      $data can be a json in the native solr update format or can be an object
+      the object must be a list of records, multiple values fields must be defined as lists too.
+        ex:
+          $dataToUpdate = array(
+          	array(
+          		  "id" => "1",
+              	"name" => "John Smith",
+              	"comments" => array("comment1", "comment2"),
+              ),
+          	array(
+          		  "id" => "2",
+              	"name" => "Mary White",
+              	"comments" => array("comment1", "comment2"),
+          	 )
+          );
+          
+      
+      getResults();
+        gets the list of results
         
+      getNumberOfResults();
+        gets the number of results found
       
