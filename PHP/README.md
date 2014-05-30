@@ -96,3 +96,63 @@ Class Methods:
     getNumberOfResults();
       gets the number of results found
       
+      
+  SolrFacetHandler:
+  -----------
+  Constructor:
+  
+    new SolrFacetHandler()
+---------------------------------------------------------------------------------
+      
+      addFacetField($field);
+        Adds a facet field, the parameter can be the field name or an object that identifies the field with its faceting options
+        ex:
+          addFacetField("category");
+          addFacetField( array("field" => "category", "sort" => "index", "mincount" => "4") );
+        
+      addFacetField($fields);
+        Adds all the facet fields at once, the parameter can be the field name or an object that identifies the field with its faceting options
+        ex:
+          addFacetFields(array("category", "name"));
+          addFacetFields( array ( array("field" => "category", "sort" => "index", "mincount" => "4"), array("field" => "name", "sort" => "index", "mincount" => "4") ) );
+
+      addFacetQuery($query);
+        Adds a facet query:
+        ex:
+          addFacetQuery('name:"john"');
+          
+      addFacetQueries($queries);
+        Add all the facet queries at once:
+        ex:
+          addFacetQueries(array('author:"john"', 'author:"mary"'));
+          
+      setFacetPrefix($prefix);
+        Sets the facet prefix
+        
+      setFacetSort($sort);
+        Sets the facet sort mode {count, index}
+        
+      setFacetLimit($limit);
+        Sets the return facet limits
+        
+      setFacetOffset($offset);
+        Sets the facet offset
+        
+      setFacetMincount($mincount);
+        Sets the facet mincount
+        
+      setFacetMissing($missing)
+        Sets the facet missing
+        
+      setFacetMethod($method);
+        Sets the facet methods
+        
+      addFacetPivot($pivot);
+        Adds the facet pivots
+        ex:
+          addFacetPivot("cat,popularity,inStock");
+      
+      
+        
+        
+          
