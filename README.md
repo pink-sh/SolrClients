@@ -3,6 +3,12 @@ SolrClients
 
 Solr Clients written in different, web-oriented, languages
 
+
+Please have a look at the Solr documentation for further functuonalities: <br/>
+http://lucene.apache.org/solr/ <br/>
+http://wiki.apache.org/solr/CommonQueryParameters <br/>
+http://wiki.apache.org/solr/SimpleFacetParameters <br/>
+
 PHP:
 ===========
 
