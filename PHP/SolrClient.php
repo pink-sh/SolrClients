@@ -14,6 +14,11 @@ Year  : 2014
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
+    
+Please have a look at the Solr documentation for further functuonalities:
+http://lucene.apache.org/solr/
+http://wiki.apache.org/solr/CommonQueryParameters
+http://wiki.apache.org/solr/SimpleFacetParameters 
 */
 
 <?php
