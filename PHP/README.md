@@ -1,6 +1,12 @@
 PHP Solr Client
 ===============
 
+Please have a look at the Solr documentation for further functuonalities: <br/>
+http://lucene.apache.org/solr/ <br/>
+http://wiki.apache.org/solr/CommonQueryParameters <br/>
+http://wiki.apache.org/solr/SimpleFacetParameters <br/>
+ 
+
 Class Methods:
 ==============
 
@@ -152,6 +158,127 @@ Class Methods:
         ex:
           addFacetPivot("cat,popularity,inStock");
       
+      addFacetDate($date);
+        Adds a facet date field, or an object with the fields and its options
+        ex:
+          addFacetDate("last_update");
+          addFacetDate(array("field" => "last_modified", "start" => "NOW/DAY-20DAYS", "end" => "NOW", "gap" => "+1DAY"));
+            possible array keys:
+            - field
+            - start
+            - end
+            - gap
+            - hardend
+            - include
+            - other
+          
+      addFacetDates($dates);
+        Adds all the facet dates at once, the parameter must be a list of date fields or a list of objects which identifies the fields and their properties
+        ex:
+          addFacetDates(array("last_update", "first_update"));
+          addFacetDates(array(array("field" => "last_modified", "start" => "NOW/DAY-20DAYS", "end" => "NOW", "gap" => "+1DAY"));
+          , array("field" => "first_update", "start" => "NOW/DAY-20DAYS", "end" => "NOW", "gap" => "+1DAY"));
+          ));
+            possible array keys:
+            - field
+            - start
+            - end
+            - gap
+            - hardend
+            - include
+            - other
+          
+      setFacetDateStart($start);
+        Sets the facet date start
+        
+      setFacetDateEnd($end);
+        Sets the facet date end
+        
+      setFacetDateGap($gap);
+        Sets the facet date gap
+        
+      setFacetDateHardend($hardend);
+        Sets the facet date hardend
+        
+      setFacetDateOther($other);
+        Sets the date other
+        
+      setFacetDateInclude($include);
+        Sets the facet date include
+        
+      addFacetRange($range);
+        Adds a facet Range field, or an object with the fields and its options
+        ex:
+          addFacetRange($range);
+          addFacetRange(array("field" => "price", "start" => "1", "end" => "100", "gap" => "2"));
+            possible array keys:
+            - field
+            - start
+            - end
+            - gap
+            - hardend
+            - include
+            - other
+          
+      addFacetRanges($ranges);
+        Adds all the facet Ranges at once, the parameter must be a list of Range fields or a list of objects which identifies the fields and their properties
+        ex:
+          addFacetRanges(array("price", "metacritic"));
+          addFacetRanges(array(array("field" => "price", "start" => "1", "end" => "100", "gap" => "2"));
+          , array("field" => "metacritic", "start" => "1", "end" => "5", "gap" => "0.5"));
+          ));
+            possible array keys:
+            - field
+            - start
+            - end
+            - gap
+            - hardend
+            - include
+            - other
+          
+      setFacetRangeStart($start);
+        Sets the facet Range start
+        
+      setFacetRangeEnd($end);
+        Sets the facet Range end
+        
+      setFacetRangeGap($gap);
+        Sets the facet Range gap
+        
+      setFacetRangeHardend($hardend);
+        Sets the facet Range hardend
+        
+      setFacetRangeOther($other);
+        Sets the Range other
+        
+      setFacetRangeInclude($include);
+        Sets the facet Range include  
+      
+      getFacetResponse();
+        Gets all the facet response
+      
+      getFacetResponseQueries();
+        Gets the facet response query
+        
+      getFacetResponseFields();
+        Gets the facet response fields
+        
+      getFacetResponseRanges();
+        Gets the facet response ranges
+        
+      getFacetResponseDates();
+        Gets the facet response dates
+        
+      getFacetResponsePivots();
+        Gets the facets response pivots
+        
+      getRawFacetResponse();
+        Gets the facet raw response
+      
+        
+        
+        
+        
       
         
         
